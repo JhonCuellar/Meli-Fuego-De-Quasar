@@ -1,9 +1,7 @@
 package co.com.meli.quasarfire.services;
 
 import co.com.meli.quasarfire.dto.*;
-
 import co.com.meli.quasarfire.entity.SatelliteEntity;
-import co.com.meli.quasarfire.exception.ServiceException;
 import co.com.meli.quasarfire.repository.QuasarFireRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -75,11 +73,51 @@ public class QuasarFireService implements IQuasarFireService{
                 ArrayList<String> al = new ArrayList<String>();
                 al = new ArrayList<>(Arrays.asList(str));
                 satellite.setMessage(al);
+                satellite.setName(satellites.get(i).getName());
                 satellitesList.add(satellite);
             }
             satellitesReq.setSatellites(satellitesList);
             response = getInformation(satellitesReq);
 
         return response;
+    }
+
+    @Override
+    public List<SatelliteEntity> getSatellite(String satelliteName) throws Exception{
+        Response response = new Response();
+        List<SatelliteEntity> satelliteEntities = new ArrayList<>();
+        if(satelliteName.contentEquals("all")) {
+            satelliteEntities = quasarFireRepository.findAll();
+        }else{
+            Optional<SatelliteEntity> satellitesEntity = quasarFireRepository.findById(satelliteName);
+            if(!satellitesEntity.isPresent()){
+                throw new Exception("El nombre del satélite es diferente a los registrados");
+            }
+            satelliteEntities.add(satellitesEntity.get());
+        }
+        return satelliteEntities;
+    }
+
+    @Override
+    public List<SatelliteEntity> updateSatellites(String satelliteName) throws Exception {
+        List<SatelliteEntity> satelliteEntities = new ArrayList<>();
+        if(satelliteName.contentEquals("all") ) {
+            satelliteEntities = quasarFireRepository.findAll();
+            for(int i =0; i < satelliteEntities.size(); i ++){
+                satelliteEntities.get(i).setMessage("");
+                satelliteEntities.get(i).setDistance(null);
+                quasarFireRepository.save(satelliteEntities.get(i));
+            }
+        }else{
+            Optional<SatelliteEntity> satellitesEntity = quasarFireRepository.findById(satelliteName);
+            if(!satellitesEntity.isPresent()){
+                throw new Exception("El nombre del satélite es diferente a los registrados");
+            }
+            satellitesEntity.get().setMessage("");
+            satellitesEntity.get().setDistance(null);
+            quasarFireRepository.save(satellitesEntity.get());
+            satelliteEntities.add(satellitesEntity.get());
+        }
+        return satelliteEntities;
     }
 }

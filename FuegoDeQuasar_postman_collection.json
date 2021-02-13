@@ -1,0 +1,456 @@
+{
+	"info": {
+		"_postman_id": "41069aed-fa88-467a-8afb-2c0e4ca598f3",
+		"name": "FuegoDeQuasar",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST/topsecret",
+			"item": [
+				{
+					"name": "POST/topsecret_OK",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"satellites\":[\r\n      {\r\n         \"name\":\"kenobi\",\r\n         \"distance\":100.0,\r\n         \"message\":[\r\n            \"este\",\r\n            \"\",\r\n            \"\",\r\n            \"mensaje\",\r\n            \"\"\r\n         ]\r\n      },\r\n      {\r\n         \"name\":\"skywalker\",\r\n         \"distance\":115.5,\r\n         \"message\":[\r\n            \"\",\r\n            \"es\",\r\n            \"\",\r\n            \"\",\r\n            \"secreto\"\r\n         ]\r\n      },\r\n      {\r\n         \"name\":\"sato\",\r\n         \"distance\":142.7,\r\n         \"message\":[\r\n            \"este\",\r\n            \"\",\r\n            \"un\",\r\n            \"\",\r\n            \"\"\r\n         ]\r\n      }\r\n   ]\r\n}\r\n ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://ec2-18-224-140-18.us-east-2.compute.amazonaws.com:8002/topsecret",
+							"protocol": "http",
+							"host": [
+								"ec2-18-224-140-18",
+								"us-east-2",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "8002",
+							"path": [
+								"topsecret"
+							]
+						},
+						"description": "Envio de 3 satelites en el payload"
+					},
+					"response": []
+				},
+				{
+					"name": "POST/topsecret_BAD_Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"satellites\":[\r\n      {\r\n         \"name\":\"kenobi\",\r\n         \"distance\":100.0,\r\n         \"message\":[\r\n            \"este\",\r\n            \"\",\r\n            \"\",\r\n            \"mensaje\",\r\n            \"\"\r\n         ]\r\n      },\r\n      {\r\n         \"name\":\"skywalker\",\r\n         \"distance\":115.5,\r\n         \"message\":[\r\n            \"\",\r\n            \"es\",\r\n            \"\",\r\n            \"\",\r\n            \"secreto\"\r\n         ]\r\n      },\r\n      {\r\n         \"name\":\"sato\",\r\n         \"distance\":142.7,\r\n         \"message\":[\r\n            \"este\",\r\n            \"\",\r\n            \"un\",\r\n            \"\",\r\n            \"\"\r\n         ]\r\n      }\r\n   ],\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://ec2-18-224-140-18.us-east-2.compute.amazonaws.com:8002/topsecret",
+							"protocol": "http",
+							"host": [
+								"ec2-18-224-140-18",
+								"us-east-2",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "8002",
+							"path": [
+								"topsecret"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST/topsecret_Diferent_Satellite",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"satellites\":[\r\n      {\r\n         \"name\":\"kenobi\",\r\n         \"distance\":100.0,\r\n         \"message\":[\r\n            \"este\",\r\n            \"\",\r\n            \"\",\r\n            \"mensaje\",\r\n            \"\"\r\n         ]\r\n      },\r\n      {\r\n         \"name\":\"skywalker\",\r\n         \"distance\":115.5,\r\n         \"message\":[\r\n            \"\",\r\n            \"es\",\r\n            \"\",\r\n            \"\",\r\n            \"secreto\"\r\n         ]\r\n      },\r\n      {\r\n         \"name\":\"sata\",\r\n         \"distance\":142.7,\r\n         \"message\":[\r\n            \"este\",\r\n            \"\",\r\n            \"un\",\r\n            \"\",\r\n            \"\"\r\n         ]\r\n      }\r\n   ]\r\n}\r\n ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://ec2-18-224-140-18.us-east-2.compute.amazonaws.com:8002/topsecret",
+							"protocol": "http",
+							"host": [
+								"ec2-18-224-140-18",
+								"us-east-2",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "8002",
+							"path": [
+								"topsecret"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST/topsecret_More_Satellite",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"satellites\":[\r\n      {\r\n         \"name\":\"kenobi\",\r\n         \"distance\":100.0,\r\n         \"message\":[\r\n            \"este\",\r\n            \"\",\r\n            \"\",\r\n            \"mensaje\",\r\n            \"\"\r\n         ]\r\n      },\r\n      {\r\n         \"name\":\"skywalker\",\r\n         \"distance\":115.5,\r\n         \"message\":[\r\n            \"\",\r\n            \"es\",\r\n            \"\",\r\n            \"\",\r\n            \"secreto\"\r\n         ]\r\n      },\r\n      {\r\n         \"name\":\"sato\",\r\n         \"distance\":142.7,\r\n         \"message\":[\r\n            \"este\",\r\n            \"\",\r\n            \"un\",\r\n            \"\",\r\n            \"\"\r\n         ]\r\n      },\r\n      {\r\n         \"name\":\"sato\",\r\n         \"distance\":142.7,\r\n         \"message\":[\r\n            \"este\",\r\n            \"\",\r\n            \"un\",\r\n            \"\",\r\n            \"\"\r\n         ]\r\n      }\r\n   ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://ec2-18-224-140-18.us-east-2.compute.amazonaws.com:8002/topsecret",
+							"protocol": "http",
+							"host": [
+								"ec2-18-224-140-18",
+								"us-east-2",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "8002",
+							"path": [
+								"topsecret"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Nivel 2 Fuego de Quasar"
+		},
+		{
+			"name": "POST/topsecret_split",
+			"item": [
+				{
+					"name": "POST/topsecret_split_OK",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"distance\":100.0,\r\n   \"message\":[\r\n      \"este\",\r\n      \"\",\r\n      \"\",\r\n      \"mensaje\",\r\n      \"\"\r\n   ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://ec2-18-224-140-18.us-east-2.compute.amazonaws.com:8002/topsecret_split/kenobi",
+							"protocol": "http",
+							"host": [
+								"ec2-18-224-140-18",
+								"us-east-2",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "8002",
+							"path": [
+								"topsecret_split",
+								"kenobi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST/topsecret_split_BAD_Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"distance\":100.0,\r\n   \"message\":[\r\n      \"este\",\r\n      \"\",\r\n      \"\",\r\n      \"mensaje\",\r\n      \"\"\r\n   ]]]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://ec2-18-224-140-18.us-east-2.compute.amazonaws.com:8002/topsecret_split/kenobi",
+							"protocol": "http",
+							"host": [
+								"ec2-18-224-140-18",
+								"us-east-2",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "8002",
+							"path": [
+								"topsecret_split",
+								"kenobi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST/topsecret_split_Diferent_Satellite",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"distance\":100.0,\r\n   \"message\":[\r\n      \"este\",\r\n      \"\",\r\n      \"\",\r\n      \"mensaje\",\r\n      \"\"\r\n   ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://ec2-18-224-140-18.us-east-2.compute.amazonaws.com:8002/topsecret_split/kenoba",
+							"protocol": "http",
+							"host": [
+								"ec2-18-224-140-18",
+								"us-east-2",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "8002",
+							"path": [
+								"topsecret_split",
+								"kenoba"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Metodo encargado de guardar el registro de un satélite"
+		},
+		{
+			"name": "GET/topsecret_split",
+			"item": [
+				{
+					"name": "GET/topsecret_split_OK",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://ec2-18-224-140-18.us-east-2.compute.amazonaws.com:8002/topsecret_split",
+							"protocol": "http",
+							"host": [
+								"ec2-18-224-140-18",
+								"us-east-2",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "8002",
+							"path": [
+								"topsecret_split"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET/topsecret_split_No_Information",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://ec2-18-224-140-18.us-east-2.compute.amazonaws.com:8002/topsecret_split",
+							"protocol": "http",
+							"host": [
+								"ec2-18-224-140-18",
+								"us-east-2",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "8002",
+							"path": [
+								"topsecret_split"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Método encargado de obtener la posición y mensaje de la nave portacarga"
+		},
+		{
+			"name": "GET/satellites",
+			"item": [
+				{
+					"name": "GET/satellites_ALL_OK",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://ec2-18-224-140-18.us-east-2.compute.amazonaws.com:8002/satellites/all",
+							"protocol": "http",
+							"host": [
+								"ec2-18-224-140-18",
+								"us-east-2",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "8002",
+							"path": [
+								"satellites",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET/satellites_satelliteName_OK",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://ec2-18-224-140-18.us-east-2.compute.amazonaws.com:8002/satellites/sato",
+							"protocol": "http",
+							"host": [
+								"ec2-18-224-140-18",
+								"us-east-2",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "8002",
+							"path": [
+								"satellites",
+								"sato"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET/satellites_Diferent_Satellite",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://ec2-18-224-140-18.us-east-2.compute.amazonaws.com:8002/satellites/satos",
+							"protocol": "http",
+							"host": [
+								"ec2-18-224-140-18",
+								"us-east-2",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "8002",
+							"path": [
+								"satellites",
+								"satos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "POST/satellites",
+			"item": [
+				{
+					"name": "POST/satellites_ALL_OK",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://ec2-18-224-140-18.us-east-2.compute.amazonaws.com:8002/satellites/all",
+							"protocol": "http",
+							"host": [
+								"ec2-18-224-140-18",
+								"us-east-2",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "8002",
+							"path": [
+								"satellites",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST/satellites_SatelliteName_OK",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://ec2-18-224-140-18.us-east-2.compute.amazonaws.com:8002/satellites/kenobi",
+							"protocol": "http",
+							"host": [
+								"ec2-18-224-140-18",
+								"us-east-2",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "8002",
+							"path": [
+								"satellites",
+								"kenobi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST/satellites_Diferent_Satellite",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://ec2-18-224-140-18.us-east-2.compute.amazonaws.com:8002/satellites/kenobo",
+							"protocol": "http",
+							"host": [
+								"ec2-18-224-140-18",
+								"us-east-2",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "8002",
+							"path": [
+								"satellites",
+								"kenobo"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Actualiza la distancia y el mensaje de uno o todos los satelites dejando el valor en nulo para volver a cargar en el método POST/topsecret_split"
+		}
+	]
+}
